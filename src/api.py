@@ -92,6 +92,24 @@ app.add_middleware(
 )
 
 
+@app.get("/", tags=["System Root"])
+def get_root():
+    """Root endpoint welcoming visitors and providing navigation links."""
+    return {
+        "service": "FinGuard AI — Intelligent Financial Transaction Fraud Detection System",
+        "status": "online",
+        "version": APP_VERSION,
+        "documentation": "/docs",
+        "health": "/health",
+        "model_info": "/model-info",
+        "dashboard": "http://localhost:8501",
+        "message": (
+            "FinGuard AI API is running. Visit /docs for interactive Swagger API documentation "
+            "or open http://localhost:8501 for the interactive Streamlit dashboard."
+        ),
+    }
+
+
 @app.get("/health", response_model=HealthResponse, tags=["System Health"])
 def get_health(db: Session = Depends(get_db)):
     """Return health status, database connectivity, dataset presence, and model readiness."""
@@ -289,7 +307,7 @@ def predict_batch_transactions(
 @app.get("/transactions", response_model=PaginatedTransactionsResponse, tags=["Transaction History"])
 def get_transactions_history(
     page: int = Query(1, ge=1, description="Page number"),
-    page_size: int = Query(20, ge=1, le=100, description="Items per page"),
+    page_size: int = Query(20, ge=1, le=1000, description="Items per page"),
     status_filter: Optional[str] = Query(None, description="Filter by prediction_status"),
     review_filter: Optional[str] = Query(None, description="Filter by review_status"),
     search: Optional[str] = Query(None, description="Search by transaction reference or ID"),

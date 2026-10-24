@@ -5,6 +5,16 @@ from fastapi.testclient import TestClient
 import numpy as np
 
 
+def test_root_endpoint(client: TestClient):
+    """GET / should return 200 with service metadata and documentation links."""
+    response = client.get("/")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "online"
+    assert "documentation" in data
+    assert "dashboard" in data
+
+
 def test_health_endpoint(client: TestClient):
     """GET /health should return 200 and healthy status."""
     response = client.get("/health")
