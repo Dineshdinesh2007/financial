@@ -468,7 +468,7 @@ elif nav_selection == "Transaction Analysis":
                         key=f"input_{feat_name}",
                     )
 
-        submit_btn = st.form_submit_btn("🛡️ Score Transaction Risk", use_container_width=True)
+        submit_btn = st.form_submit_button("🛡️ Score Transaction Risk", use_container_width=True)
 
     if submit_btn:
         payload = {
@@ -840,7 +840,7 @@ elif nav_selection == "Transaction History":
             with r_action_col2:
                 analyst_notes = st.text_input("Reviewer Notes", placeholder="e.g. Cardholder confirmed authorized purchase.")
 
-            save_rev_btn = st.form_submit_btn("💾 Save Review Decision")
+            save_rev_btn = st.form_submit_button("💾 Save Review Decision")
 
         if save_rev_btn:
             try:
