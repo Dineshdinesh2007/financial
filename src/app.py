@@ -8,8 +8,16 @@ and model governance reporting.
 import io
 import json
 import os
+import sys
+from pathlib import Path
 from datetime import datetime
 from typing import Dict, Any, List, Optional
+
+# Ensure project root is in sys.path so 'src' package imports resolve correctly in Streamlit
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 import pandas as pd
 import numpy as np
 import requests
