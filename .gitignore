@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Data files (protect Kaggle creditcard.csv and any actual payment records)
+data/raw/creditcard.csv
+data/raw/*.zip
+data/raw/*.tar.gz
+data/raw/*.csv
+!data/raw/.gitkeep
+!data/synthetic/*.csv
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+finguard.db
+
+# Environment and secrets
+.env
+.env.*
+secrets.toml
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+htmlcov/

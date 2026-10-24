@@ -1,0 +1,492 @@
+{
+  "model_name": "LogisticRegression",
+  "model_version": "v1.0.0",
+  "created_at": "2026-10-24T01:42:50.337388+00:00",
+  "dataset_source": "synthetic_demo",
+  "dataset_records": 5000,
+  "is_synthetic": true,
+  "feature_columns": [
+    "Time",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount"
+  ],
+  "features_count": 30,
+  "selected_threshold": 0.18,
+  "candidate_models_comparison": {
+    "LogisticRegression": {
+      "validation_average_precision": 1.0,
+      "validation_roc_auc": 1.0,
+      "optimal_threshold": 0.18,
+      "validation_metrics_at_threshold": {
+        "threshold": 0.18,
+        "val_precision": 1.0,
+        "val_recall": 1.0,
+        "val_f1": 1.0
+      }
+    },
+    "RandomForest": {
+      "validation_average_precision": 1.0,
+      "validation_roc_auc": 1.0,
+      "optimal_threshold": 0.31,
+      "validation_metrics_at_threshold": {
+        "threshold": 0.31,
+        "val_precision": 1.0,
+        "val_recall": 1.0,
+        "val_f1": 1.0
+      }
+    }
+  },
+  "feature_importances": [
+    {
+      "feature": "V12",
+      "importance": 0.1352
+    },
+    {
+      "feature": "V17",
+      "importance": 0.1193
+    },
+    {
+      "feature": "V14",
+      "importance": 0.1173
+    },
+    {
+      "feature": "V11",
+      "importance": 0.1127
+    },
+    {
+      "feature": "V4",
+      "importance": 0.0813
+    },
+    {
+      "feature": "V10",
+      "importance": 0.0808
+    },
+    {
+      "feature": "V1",
+      "importance": 0.0416
+    },
+    {
+      "feature": "V26",
+      "importance": 0.0404
+    },
+    {
+      "feature": "Time",
+      "importance": 0.0342
+    },
+    {
+      "feature": "V21",
+      "importance": 0.0224
+    },
+    {
+      "feature": "V18",
+      "importance": 0.0222
+    },
+    {
+      "feature": "Amount",
+      "importance": 0.0201
+    },
+    {
+      "feature": "V13",
+      "importance": 0.0184
+    },
+    {
+      "feature": "V28",
+      "importance": 0.0181
+    },
+    {
+      "feature": "V16",
+      "importance": 0.018
+    },
+    {
+      "feature": "V25",
+      "importance": 0.017
+    },
+    {
+      "feature": "V9",
+      "importance": 0.0144
+    },
+    {
+      "feature": "V20",
+      "importance": 0.0127
+    },
+    {
+      "feature": "V7",
+      "importance": 0.0112
+    },
+    {
+      "feature": "V6",
+      "importance": 0.0091
+    },
+    {
+      "feature": "V8",
+      "importance": 0.0087
+    },
+    {
+      "feature": "V27",
+      "importance": 0.0087
+    },
+    {
+      "feature": "V23",
+      "importance": 0.0081
+    },
+    {
+      "feature": "V3",
+      "importance": 0.0079
+    },
+    {
+      "feature": "V19",
+      "importance": 0.0067
+    },
+    {
+      "feature": "V2",
+      "importance": 0.0043
+    },
+    {
+      "feature": "V15",
+      "importance": 0.0035
+    },
+    {
+      "feature": "V5",
+      "importance": 0.0027
+    },
+    {
+      "feature": "V24",
+      "importance": 0.0017
+    },
+    {
+      "feature": "V22",
+      "importance": 0.0013
+    }
+  ],
+  "training_config": {
+    "test_split": 0.2,
+    "val_split": 0.2,
+    "train_split": 0.6,
+    "scaler": "RobustScaler",
+    "selection_metric": "validation_average_precision",
+    "threshold_objective": "maximize_f1_score"
+  },
+  "evaluation_metrics": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "average_precision": 1.0,
+    "roc_auc": 1.0,
+    "confusion_matrix": {
+      "matrix": [
+        [
+          985,
+          0
+        ],
+        [
+          0,
+          15
+        ]
+      ],
+      "true_negatives": 985,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_positives": 15
+    },
+    "classification_report": {
+      "Genuine": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 985.0
+      },
+      "Fraud": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1000.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1000.0
+      }
+    },
+    "pr_curve": {
+      "precision": [
+        0.015,
+        0.0152,
+        0.0153,
+        0.0155,
+        0.0156,
+        0.0158,
+        0.016,
+        0.0161,
+        0.0163,
+        0.0165,
+        0.0167,
+        0.0169,
+        0.017,
+        0.0172,
+        0.0174,
+        0.0176,
+        0.0179,
+        0.0181,
+        0.0183,
+        0.0185,
+        0.0187,
+        0.019,
+        0.0192,
+        0.0195,
+        0.0197,
+        0.02,
+        0.0203,
+        0.0205,
+        0.0208,
+        0.0211,
+        0.0214,
+        0.0217,
+        0.0221,
+        0.0224,
+        0.0227,
+        0.0231,
+        0.0234,
+        0.0238,
+        0.0242,
+        0.0246,
+        0.025,
+        0.0254,
+        0.0259,
+        0.0263,
+        0.0268,
+        0.0273,
+        0.0278,
+        0.0283,
+        0.0288,
+        0.0294,
+        0.03,
+        0.0306,
+        0.0312,
+        0.0319,
+        0.0326,
+        0.0333,
+        0.0341,
+        0.0349,
+        0.0357,
+        0.0366,
+        0.0375,
+        0.0385,
+        0.0395,
+        0.0405,
+        0.0417,
+        0.0429,
+        0.0441,
+        0.0455,
+        0.0469,
+        0.0484,
+        0.05,
+        0.0517,
+        0.0536,
+        0.0556,
+        0.0577,
+        0.06,
+        0.0625,
+        0.0652,
+        0.0682,
+        0.0714,
+        0.075,
+        0.0789,
+        0.0833,
+        0.0882,
+        0.0938,
+        0.1,
+        0.1071,
+        0.1154,
+        0.125,
+        0.1364,
+        0.15,
+        0.1667,
+        0.1875,
+        0.2143,
+        0.25,
+        0.3,
+        0.375,
+        0.5,
+        0.75,
+        1.0,
+        1.0
+      ],
+      "recall": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.6667,
+        0.0
+      ]
+    },
+    "roc_curve": {
+      "fpr": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "tpr": [
+        0.0,
+        0.0667,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "quality_summary": {
+    "total_records": 5000,
+    "total_features": 30,
+    "total_missing_values": 0,
+    "duplicate_records": 0,
+    "has_target": true,
+    "amount_stats": {
+      "min": 0.5,
+      "max": 1372.98,
+      "mean": 51.271676,
+      "median": 24.79,
+      "std": 102.55432368365688,
+      "p25": 11.4275,
+      "p75": 53.15,
+      "p95": 163.1615000000001,
+      "p99": 472.1547000000008
+    },
+    "class_distribution": {
+      "genuine_count": 4925,
+      "fraud_count": 75,
+      "fraud_percentage": 1.5,
+      "imbalance_ratio": "1 : 65.7"
+    }
+  }
+}
